@@ -1,0 +1,35 @@
+<div style="border: 2px solid black; width: 640px; height: 480px;">
+  <video width="640" height="480" poster="cover_image.jpg" controls>
+    <source src="Peugeot 306 maxi.mp4" type="video/mp4">
+    <source src="video.webm" type="video/webm">
+    <source src="video.ogg" type="video/ogg">
+    <a href="video.mp4" download>Descargar video</a>
+    <a href="video.mp4" target="_blank">Abrir en página nueva</a>
+    <p>Lo siento, su navegador no es compatible con ninguno de los formatos de video.</p>
+  </video>
+</div>
+// JS
+
+<script>
+  var video = document.querySelector("video");
+  var playBtn = document.createElement("button");
+  var pauseBtn = document.createElement("button");
+  var stopBtn = document.createElement("button");
+  playBtn.innerHTML = "Play";
+  pauseBtn.innerHTML = "Pause";
+  stopBtn.innerHTML = "Stop";
+  playBtn.addEventListener("click", function() {
+    video.play();
+  });
+  pauseBtn.addEventListener("click", function() {
+    video.pause();
+  });
+  stopBtn.addEventListener("click", function() {
+    video.currentTime = 0;
+    video.pause();
+  });
+  video.parentNode.appendChild(playBtn);
+  video.parentNode.appendChild(pauseBtn);
+  video.parentNode.appendChild(stopBtn);
+  video.controls = false;
+</script>
